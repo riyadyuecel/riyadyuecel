@@ -1,1 +1,37 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+     // Değişkenleri Oluştur
+        int Matematik,Fizik,Kimya,Turkce,Tarih,Muzik;
 
+    // Scanner sınıfımızı tanımladık
+     Scanner input = new Scanner(System.in);
+
+     // Kullanıcan Değerleri Al
+     System.out.print("Matematik Notunuz : ");
+     Matematik = input.nextInt();
+
+     System.out.print("Fizik Notunuz : ");
+     Fizik = input.nextInt();
+
+     System.out.print("Kimya Notunuz : ");
+     Kimya = input.nextInt();
+
+     System.out.print("Turkce Notunuz : ");
+     Turkce = input.nextInt();
+
+        System.out.print("Tarih Notunuz : ");
+        Tarih = input.nextInt();
+
+        System.out.print("Müzik Notunuz :");
+        Muzik = input.nextInt();
+
+
+        int toplam = (Matematik + Fizik + Kimya + Turkce + Tarih + Muzik);
+        double sonuc = toplam /6.0;
+        System.out.println("Ortalamanız: " + sonuc);
+
+        System.out.println(sonuc > 60 ? "Sınıfı Geçti" : "Sınıfta Kaldı");
+
+    }
+}
