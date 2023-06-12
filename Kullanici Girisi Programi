@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Main { 
+public static void main(String[] args) {
+String username, inputpsw, select;
+String password = "java123";
+Scanner input = new Scanner(System.in);
+
+    //Kullanıcı Adi ve Sifre Tanimliyoruz
+
+    System.out.print("Kullanıcı Adınız : ");
+    username = input.nextLine();
+
+    System.out.print("Şifreniz : ");
+    inputpsw = input.nextLine();
+
+    //Kullanıcı adi ve sifre belirliyoruz
+
+    if (username.equals("Patika") && inputpsw.equals(password)) {
+        System.out.println("Giriş Yaptınız !");
+    }
+
+    //Kullanıcı Adı Yanlış ise
+
+    else if (!username.equals("Patika") && inputpsw.equals(password)) {
+        System.out.println("Kullanıcı Adı Yanlış !");
+    }
+
+    // Şifre Yanlış ve Yenilemek İstenirse
+
+    else if (username.equals("Patika") && !inputpsw.equals(password)) {
+        System.out.print("Şifrenizi Değiştirmek İster Misiniz [Evet/Hayır]: ");
+        select = input.nextLine();
+
+        switch (select) {
+            case "Evet":
+                System.out.print("Yeni Şifreyi Giriniz : ");
+                inputpsw = input.nextLine();
+
+            //Şifre Aynı ise
+
+            if (inputpsw.equals(password)) {
+                System.out.print("Şifreniz Bir Önceki ile Aynı Olamaz !");
+                break;
+            } else {
+                System.out.print("Tebrikler , Şifreniz Oluşturuldu ");
+                password = inputpsw;
+            }
+
+            // Şifre Değiştirilmek İstenmiyorsa
+            case "Hayır":
+                System.out.print("Tekrar Giriş Deneyiiniz !");
+
+                // Programı tekrar nasıl başaltabiliriz (return) !!!
+        }
+    }
+    // Tüm Bilgiler yanlış ise
+
+    else {
+        System.out.println("Bilgileriniz Yanlış! Lütfen Kontrol Ediniz !");
+
+    }
+}
+}
